@@ -9,8 +9,6 @@ export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
     async({page=1, order='asc', limit=10}, {getState}) => {
         try {
-            // eslint-disable-next-line no-console
-            console.log('Fetching posts from:', URL_SERV);
             const response = await axios.get(`${URL_SERV}/posts?_page=${page}&_limit=${limit}&_order=${order}&_sort=id`);
             const prevState = getState().posts;
 
@@ -21,8 +19,6 @@ export const fetchPosts = createAsyncThunk(
             }
             
         } catch(error) {
-            // eslint-disable-next-line no-console
-            console.error('fetchPosts error:', error.message);
             throw error
         }
     }

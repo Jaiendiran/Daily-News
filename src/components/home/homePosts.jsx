@@ -18,12 +18,6 @@ const HomePosts = () => {
         }
     }, []);
 
-    useEffect(() => {
-        // debug: log articles when they update
-        // eslint-disable-next-line no-console
-        console.log('HomePosts articles:', homePosts.articles);
-    }, [homePosts.articles]);
-
     const loadMorePost = () => {
         const page = homePosts.articles.page + 1;
         dispatch(fetchPosts({page, order:'desc', limit:6}))
