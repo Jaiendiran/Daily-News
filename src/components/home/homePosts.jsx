@@ -18,6 +18,12 @@ const HomePosts = () => {
         }
     }, []);
 
+    useEffect(() => {
+        // debug: log articles when they update
+        // eslint-disable-next-line no-console
+        console.log('HomePosts articles:', homePosts.articles);
+    }, [homePosts.articles]);
+
     const loadMorePost = () => {
         const page = homePosts.articles.page + 1;
         dispatch(fetchPosts({page, order:'desc', limit:6}))
@@ -30,7 +36,7 @@ const HomePosts = () => {
                 className="my-masonry-grid"
                 columnClassName="my-masonry-grid_column"
             >
-                { homePosts.articles? homePosts.articles.items.map(item => (
+                { homePosts.articles && Array.isArray(homePosts.articles.items) ? homePosts.articles.items.map(item => (
                     <div key={item.id}>
                         {/* Images */}
                         <img src={`${item.image}?${item.id}`} alt={`Pic ${item.id}`} style={{width:'100%', height:'200px'}} />
