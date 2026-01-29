@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { addToNewsLetter } from "../utils/thunks";
 
 
-
 export const userSlice = createSlice({
     name: 'users',
     initialState: {

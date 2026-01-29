@@ -3,8 +3,6 @@ import { LinkContainer } from "react-router-bootstrap";
 
 
 const Header = () => {
-
-
     return (
         <div className="container">
             <Navbar className="yellowtail">

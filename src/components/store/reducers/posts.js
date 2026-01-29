@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchPosts, fetchPostsByID } from "../utils/thunks";
 
 
-
 export const postSlice = createSlice({
     name: 'posts',
     initialState: {

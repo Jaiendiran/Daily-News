@@ -5,11 +5,7 @@ import Contact from "./components/contact"
 import MainLayout from "./components/layouts/mainLayout"
 import PostComponent from "./components/posts"
 
-
-
 const Router = () => {
-
-
   return (
     <BrowserRouter>
       <Header />
