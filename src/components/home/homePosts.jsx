@@ -4,7 +4,7 @@ import { fetchPosts } from "../store/utils/thunks";
 import { Button, Spinner } from "react-bootstrap";
 import Masonry from "react-masonry-css";
 import { LinkContainer } from "react-router-bootstrap";
-import Moment from "react-moment";
+import moment from "moment";
 
 
 
@@ -36,7 +36,7 @@ const HomePosts = () => {
                         <img src={`${item.image}?${item.id}`} alt={`Pic ${item.id}`} style={{width:'100%', height:'200px'}} />
                         {/* Name & date */}
                         <div className="author">
-                            <span>{item.author} - <Moment format="DD MMMM">{item.createdAt}</Moment> </span>
+                            <span>{item.author} - {moment(item.createdAt).format('DD MMMM')} </span>
                         </div>
                         {/* Title & excerpt */}
                         <div className="content">

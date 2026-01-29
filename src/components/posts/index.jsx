@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchPostsByID } from "../store/utils/thunks";
-import Moment from "react-moment";
+import moment from "moment";
 import { clearPostByID } from "../store/reducers/posts";
 
 
@@ -29,7 +29,7 @@ const PostComponent = () => {
                     <h1>{ posts.postByID.title }</h1>
                     <div className="image" style={{background:`url(${posts.postByID.imagexl})`}} ></div>
                     <div className="author">
-                        Created by: <span>{posts.postByID.author}</span> - <Moment format="DD MMMM">{ posts.postByID.createAt }</Moment>
+                        Created by: <span>{posts.postByID.author}</span> - { moment(posts.postByID.createdAt).format('DD MMMM') }
                     </div>
                     <div className="content mt-3">
                         <div dangerouslySetInnerHTML={{__html:posts.postByID.content}}></div>
